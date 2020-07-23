@@ -8,6 +8,7 @@ const overlay = document.getElementById("overlay");
 const resetButton = document.getElementsByClassName("btn__reset")[0];
 
 resetButton.addEventListener("click", function () {
+  reset();
   overlay.style.display = "none";
 });
 
@@ -44,9 +45,6 @@ function addPhraseToDisplay(arr) {
   }
 }
 
-const phraseArray = getRandomPhraseAsArray(phrases);
-addPhraseToDisplay(phraseArray);
-
 //Create a checkLetter function
 // call function from an event listener on button events from keyboard
 
@@ -72,12 +70,14 @@ function checkWin() {
     title = document.getElementsByClassName("title")[0];
     title.textContent = "You win!";
     resetButton.textContent = "Play again";
+    resetButton.style.color = "#78CF82";
     overlay.style.backgroundColor = "#78CF82";
     overlay.style.display = null;
   } else if (missed >= 5) {
     title = document.getElementsByClassName("title")[0];
     title.textContent = "You lose!";
     resetButton.textContent = "Try again";
+    resetButton.style.color = "#D94545";
     overlay.style.backgroundColor = "#D94545";
     overlay.style.display = null;
   }
@@ -109,8 +109,20 @@ for (keyboardButton of keyboardButtons) {
 
 //reset game
 
-// function reset() {
-//   const phraseArray = getRandomPhraseAsArray(phrases);
-//   addPhraseToDisplay(phraseArray);
-//   missed = 0;
-// }
+function reset() {
+  // empty phrase ul
+  const ul = document.getElementsByTagName("ul")[0];
+  ul.textContent = "";
+
+  const phraseArray = getRandomPhraseAsArray(phrases);
+  addPhraseToDisplay(phraseArray);
+  missed = 0;
+  const hearts = document.getElementsByTagName("img");
+  for (heart of hearts) {
+    heart.style.opacity = "1.0";
+  }
+  for (keyboardButton of keyboardButtons) {
+    keyboardButton.className = null;
+    keyboardButton.disabled = false;
+  }
+}

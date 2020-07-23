@@ -176,8 +176,10 @@ button {
   padding: 8px;
   margin: 50px auto;
   background: #FFFFFF;
+  color: #5b85b7;
   border-radius: 5px;
   font-size: var(--font-size-medium);
+  cursor: pointer;
 }
 
 /* Overlay */
@@ -204,9 +206,6 @@ button {
   background-color: var(--color-start);
 }
 
-.start a {
-  color: var(--color-win);
-}
 
 .win {
   background-color: var(--color-win);
@@ -218,6 +217,7 @@ button {
 
 .lose {
   background-color: var(--color-lose);
+
 }
 
 .lose a {
