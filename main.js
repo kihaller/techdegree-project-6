@@ -108,7 +108,6 @@ for (keyboardButton of keyboardButtons) {
 }
 
 //reset game
-
 function reset() {
   // empty phrase ul
   const ul = document.getElementsByTagName("ul")[0];
