@@ -84,7 +84,6 @@ button {
 /* Phrase */
 
 .letter {
-
   font-size: var(--font-size-medium);
   height: 65px;
   width: 65px;
@@ -222,4 +221,17 @@ button {
 
 .lose a {
   color: var(--color-lose);
+}
+
+@media (max-width: 767px) {
+  .letter {
+    margin: 5px;
+  }
+
+  .keyrow {
+    display: block;
+    margin: 0auto;
+  }
+
+
 }
