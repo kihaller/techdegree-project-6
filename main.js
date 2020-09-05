@@ -125,3 +125,19 @@ function reset() {
     keyboardButton.disabled = false;
   }
 }
+
+/* ------------
+Popup on small screens
+------------ */
+function popup(smallScreen) {
+  if (smallScreen.matches) {
+    // If media query matches
+    document.getElementById("alert").style.display = "flex";
+  } else {
+    document.getElementById("alert").style.display = "none";
+  }
+}
+
+let smallScreen = window.matchMedia("(max-width: 1023px)");
+popup(smallScreen);
+smallScreen.addListener(popup); // Attach listener function on state changes

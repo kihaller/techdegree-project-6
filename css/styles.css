@@ -25,10 +25,10 @@
 }
 
 body {
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   display: flex;
-  height: 100vh;
 }
 
 li,
@@ -64,9 +64,8 @@ button {
 .main-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   height: 100%;
-  max-height: 900px;
   text-align: center;
 }
 
@@ -88,8 +87,7 @@ button {
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
-  margin-right: 2px;
-  margin-left: 2px;
+  margin: 2px;
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
@@ -230,8 +228,46 @@ button {
 
   .keyrow {
     display: block;
-    margin: 0auto;
+    margin: 0 auto;
   }
 
 
+}
+
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+
+}
+
+.alert {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  font-size: .8em;
+  color: #FFF;
+  margin: 15px 10px;
+  border-radius: 5px;
+  background-color: #76CE82;
+  opacity: 1;
+  transition: opacity 0.6s;
+  z-index: 1000;
+}
+
+/* The close button */
+.closebtn {
+  margin: 5px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 15px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
 }
